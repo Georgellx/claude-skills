@@ -16,6 +16,9 @@
 | [**prompt-optimizer**](./prompt-optimizer) | 提示词优化器——给一段简单/模糊的指令，自动识别涉及的专业领域，以领域资深专家的视角补全你没说出口的真实意图，重写成可直接复用的高质量 AI 对话提示词（附假设清单与占位符，缺关键信息时才追问）。 |
 | [**knowledge-ingest**](./knowledge-ingest) | 知识入库官——把文章/链接/长文本智能入库本地 Obsidian 知识库：先做价值分诊（高价值留全文+解读、低价值只留提炼+来源），再自动分类、抽取提示词归库、保守双链，必要时以架构师视角新增分类。 |
 | [**xiaohongshu-lowtop**](./xiaohongshu-lowtop) | 小红书低粉爆款挖掘——拉取粉丝<5000 但互动>500 的笔记榜单，找有爆款规律的优质样本。需 RedFox API Key（`REDFOX_API_KEY`）。第三方来源：[redfox-data/redfox-community](https://github.com/redfox-data/redfox-community/tree/main/skills/xiaohongshu-lowtop)。 |
+| [**obsidian-markdown**](./obsidian-markdown) | 写正确的 Obsidian 风格 Markdown——wikilink、嵌入(embed)、callout、properties(frontmatter)、注释等 Obsidian 专属语法，编辑 vault 里的 `.md` 文件时自动触发。第三方来源：[kepano/obsidian-skills](https://github.com/kepano/obsidian-skills)（Obsidian 官方 CEO Steph Ango，MIT）。 |
+| [**obsidian-bases**](./obsidian-bases) | 创建/编辑 Obsidian Bases（`.base`）——给笔记做数据库式视图：表格/卡片视图、按 tag/文件夹/属性/日期过滤、公式与汇总。第三方来源：[kepano/obsidian-skills](https://github.com/kepano/obsidian-skills)。 |
+| [**json-canvas**](./json-canvas) | 创建/编辑 JSON Canvas（`.canvas`）——节点、连线、分组，用来做思维导图、流程图、可视化画布，遵循 [JSON Canvas 1.0](https://jsoncanvas.org/spec/1.0/) 规范。第三方来源：[kepano/obsidian-skills](https://github.com/kepano/obsidian-skills)。 |
 
 ---
 
