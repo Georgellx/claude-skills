@@ -11,9 +11,8 @@
 | Skill | 一句话说明 |
 |---|---|
 | [**self-understanding-coach**](./self-understanding-coach) | 引导式"自我认知法"教练，源自八木仁平《如何找到想做的事》——按"重要的事(价值观)→擅长的事(才能)→喜欢的事(热情)"一步步提问，帮你组合出"真正想做的事"。 |
-| [**life-reset-coach**](./life-reset-coach) | 引导式"人生重启"教练，源自 Dan Koe《How to fix your entire life in 1 day》——先用"反愿景"逼出改变的能量，挖出行为背后的隐藏目标，再把目标落成一张"人生游戏地图"，用"只相信行动"逼你每天产出。 || [**prompt-optimizer**](./prompt-optimizer) | 提示词优化器——给一段简单/模糊的指令，自动识别涉及的专业领域，以领域资深专家的视角补全你没说出口的真实意图，重写成可直接复用的高质量 AI 对话提示词（附假设清单与占位符，缺关键信息时才追问）。 |
+| [**life-reset-coach**](./life-reset-coach) | 引导式"人生重启"教练，源自 Dan Koe《How to fix your entire life in 1 day》——先用"反愿景"逼出改变的能量，挖出行为背后的隐藏目标，再把目标落成一张"人生游戏地图"，用"只相信行动"逼你每天产出。 |
 | [**content-digest**](./content-digest) | 内容消化官——读博主文章时一次产出三类资产：知识（按价值分诊进「文章笔记」）、提示词（进「提示词目录」）、想法/需求（可复刻的打法或被激发的点子进「产品想法」，自动抽「已验证样本证据」）。双模式：发来文章走完整消化、甩一句想法走低摩擦速记。由 `knowledge-ingest` + `capture-idea` 合并而来。 |
-| [**xiaohongshu-lowtop**](./xiaohongshu-lowtop) | 小红书低粉爆款挖掘——拉取粉丝<5000 但互动>500 的笔记榜单，找有爆款规律的优质样本。需 RedFox API Key（`REDFOX_API_KEY`）。第三方来源：[redfox-data/redfox-community](https://github.com/redfox-data/redfox-community/tree/main/skills/xiaohongshu-lowtop)。 |
 | [**obsidian-markdown**](./obsidian-markdown) | 写正确的 Obsidian 风格 Markdown——wikilink、嵌入(embed)、callout、properties(frontmatter)、注释等 Obsidian 专属语法，编辑 vault 里的 `.md` 文件时自动触发。第三方来源：[kepano/obsidian-skills](https://github.com/kepano/obsidian-skills)（Obsidian 官方 CEO Steph Ango，MIT）。 |
 | [**obsidian-bases**](./obsidian-bases) | 创建/编辑 Obsidian Bases（`.base`）——给笔记做数据库式视图：表格/卡片视图、按 tag/文件夹/属性/日期过滤、公式与汇总。第三方来源：[kepano/obsidian-skills](https://github.com/kepano/obsidian-skills)。 |
 | [**json-canvas**](./json-canvas) | 创建/编辑 JSON Canvas（`.canvas`）——节点、连线、分组，用来做思维导图、流程图、可视化画布，遵循 [JSON Canvas 1.0](https://jsoncanvas.org/spec/1.0/) 规范。第三方来源：[kepano/obsidian-skills](https://github.com/kepano/obsidian-skills)。 |
