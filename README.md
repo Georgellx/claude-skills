@@ -11,10 +11,8 @@
 | Skill | 一句话说明 |
 |---|---|
 | [**self-understanding-coach**](./self-understanding-coach) | 引导式"自我认知法"教练，源自八木仁平《如何找到想做的事》——按"重要的事(价值观)→擅长的事(才能)→喜欢的事(热情)"一步步提问，帮你组合出"真正想做的事"。 |
-| [**life-reset-coach**](./life-reset-coach) | 引导式"人生重启"教练，源自 Dan Koe《How to fix your entire life in 1 day》——先用"反愿景"逼出改变的能量，挖出行为背后的隐藏目标，再把目标落成一张"人生游戏地图"，用"只相信行动"逼你每天产出。 |
-| [**capture-idea**](./capture-idea) | 捕捉产品想法——冒出新点子时，帮你用统一结构整理好、存进知识库的「产品想法」目录（一想法一文件），并同步更新索引看板，让灵感低摩擦沉淀、可检索、可成长。 |
-| [**prompt-optimizer**](./prompt-optimizer) | 提示词优化器——给一段简单/模糊的指令，自动识别涉及的专业领域，以领域资深专家的视角补全你没说出口的真实意图，重写成可直接复用的高质量 AI 对话提示词（附假设清单与占位符，缺关键信息时才追问）。 |
-| [**knowledge-ingest**](./knowledge-ingest) | 知识入库官——把文章/链接/长文本智能入库本地 Obsidian 知识库：先做价值分诊（高价值留全文+解读、低价值只留提炼+来源），再自动分类、抽取提示词归库、保守双链，必要时以架构师视角新增分类。 |
+| [**life-reset-coach**](./life-reset-coach) | 引导式"人生重启"教练，源自 Dan Koe《How to fix your entire life in 1 day》——先用"反愿景"逼出改变的能量，挖出行为背后的隐藏目标，再把目标落成一张"人生游戏地图"，用"只相信行动"逼你每天产出。 || [**prompt-optimizer**](./prompt-optimizer) | 提示词优化器——给一段简单/模糊的指令，自动识别涉及的专业领域，以领域资深专家的视角补全你没说出口的真实意图，重写成可直接复用的高质量 AI 对话提示词（附假设清单与占位符，缺关键信息时才追问）。 |
+| [**content-digest**](./content-digest) | 内容消化官——读博主文章时一次产出三类资产：知识（按价值分诊进「文章笔记」）、提示词（进「提示词目录」）、想法/需求（可复刻的打法或被激发的点子进「产品想法」，自动抽「已验证样本证据」）。双模式：发来文章走完整消化、甩一句想法走低摩擦速记。由 `knowledge-ingest` + `capture-idea` 合并而来。 |
 | [**xiaohongshu-lowtop**](./xiaohongshu-lowtop) | 小红书低粉爆款挖掘——拉取粉丝<5000 但互动>500 的笔记榜单，找有爆款规律的优质样本。需 RedFox API Key（`REDFOX_API_KEY`）。第三方来源：[redfox-data/redfox-community](https://github.com/redfox-data/redfox-community/tree/main/skills/xiaohongshu-lowtop)。 |
 | [**obsidian-markdown**](./obsidian-markdown) | 写正确的 Obsidian 风格 Markdown——wikilink、嵌入(embed)、callout、properties(frontmatter)、注释等 Obsidian 专属语法，编辑 vault 里的 `.md` 文件时自动触发。第三方来源：[kepano/obsidian-skills](https://github.com/kepano/obsidian-skills)（Obsidian 官方 CEO Steph Ango，MIT）。 |
 | [**obsidian-bases**](./obsidian-bases) | 创建/编辑 Obsidian Bases（`.base`）——给笔记做数据库式视图：表格/卡片视图、按 tag/文件夹/属性/日期过滤、公式与汇总。第三方来源：[kepano/obsidian-skills](https://github.com/kepano/obsidian-skills)。 |
@@ -93,30 +91,32 @@
 
 ---
 
-## 📥 knowledge-ingest 详解
+## 📥 content-digest 详解
 
 ### 这是什么
 
-一个**知识入库流水线**：你发一篇文章 / 链接 / 长文本，它先评估价值，再决定怎么存，最后归档进本地 Obsidian 知识库（`D:\KnowledgeBase\Note`），并把文中可复用的提示词单独收进「提示词目录」。
+一个**内容消化流水线**，专为"学习博主文章、复刻已验证的方法和商业模式来赚钱"设计。你发一篇文章 / 链接 / 长文，它在**同一次阅读里产出三类资产**，并把"能复刻变现的打法"钉在真实样本上，而不是飘成空想。
 
-### 核心流程
+### 三类产物
 
-```
-去重 → 价值分诊 → 拆解 → 分类路由 → 双链 → 验收 → 清理
-```
+- **知识** → 价值分诊（A 留全文+解读 / B 留全文+干净重写 / C 只留提炼+来源）后进「文章笔记」。
+- **提示词** → 文中可复制的提示词抽进「提示词目录」，文章里只留指针双链、不重复抄。
+- **想法/需求** → 博主可复刻的打法、或被激发的点子进「产品想法」，**自动抽「已验证样本证据」**（粉丝/收入/销量），并区分这是"想法"还是观察到的"真实需求"。
 
-- **价值分诊**：A 高价值（留全文 + 解读验证）/ B 中价值（留全文 + 干净重写版）/ C 低价值（只留提炼 + 来源链接），每次都给"判断 + 理由"，不黑箱。
-- **各归其位**：文章进文章笔记，提示词进提示词目录，单一来源、不重复复制。
-- **架构师视角分类**：现有分类装不下时，自主判断要不要新增分类并更新索引，理由写进简报供否决。
-- **自动清理**：来源在 `Clippings` 的，验收通过后删除。
+### 双模式
 
-> ⚠️ 这个 skill 把某个具体知识库的目录地图写死在 `SKILL.md` 里（路径、提示词分类表、模板）。换库使用时，需要先改 `SKILL.md` 顶部的「知识库地图」。
+- **消化模式**（有文章）：去重 → 价值分诊 → 拆三类产物 → 分类路由 → 双链 → 验收清理。
+- **速记模式**（只有你一句话的想法）：低摩擦捕捉，别盘问，直接进「产品想法」+ 更新索引看板。
+
+> ⚠️ 这个 skill 把某个具体知识库的目录地图写死在 `SKILL.md` / `references/` 里（路径、提示词分类表、模板）。换库使用时先改顶部「知识库地图」。frontmatter 遵循库统一规范（type 8 值词表 / tags 块列表 / related_notes 加引号真实文件名）。
 
 ### 何时会触发
 
-> "帮我入库这篇" · "收进知识库" · "分析一下这篇文章有没有价值" · "这篇值不值得存" · 直接发来一篇文章 / 链接 / Clippings 路径 · "把文章里的提示词收进提示词库"
+> 发来文章 / 链接 / Clippings 路径 · "帮我入库 / 整理这篇 / 这篇值不值得存" · "把提示词收进库" · "这个博主的打法能不能复刻" · "我有个想法 / 我想做一个 XX / 以后可以做 XX"
 
-也可以直接 `/knowledge-ingest` 手动调用。
+也可以直接 `/content-digest` 手动调用。
+
+> 由 `knowledge-ingest`（知识入库）+ `capture-idea`（想法捕捉）合并而来——因为读一篇博主文章常常同时产出"知识"和"可复刻的赚钱点子"，分两个 skill 会漏掉后者。
 
 ---
 
