@@ -1,1 +1,5 @@
 finish-junction.bat
+
+# 本地专用、不公开到 GitHub 的 skill 及其注册文件
+job-application-coach/
+README.local.md
